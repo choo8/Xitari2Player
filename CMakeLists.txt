@@ -81,6 +81,22 @@ ADD_LIBRARY(
     ${zlib_files}
 )
 
+# Generate a shared library for xitari-python interface
+ADD_LIBRARY(
+    xitari_c_shared
+    SHARED
+    xitari_python_interface/xitari_c_wrapper.cc
+    ale_interface.hpp
+    ${agents_files}
+    ${common_files}
+    ${controllers_files}
+    ${emucore_files}
+    ${environment_files}
+    ${games_files}
+    ${os_files}
+    ${zlib_files}
+)
+
 # Generate a xitari shared library on Linux.
 IF (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 ADD_LIBRARY(
@@ -97,6 +113,8 @@ ADD_LIBRARY(
     ${zlib_files}
 )
 SET_TARGET_PROPERTIES(xitari_shared PROPERTIES OUTPUT_NAME xitari)
+SET_TARGET_PROPERTIES(xitari_c_shared PROPERTIES OUTPUT_NAME xitari_c)
+SET_TARGET_PROPERTIES(xitari_c_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/xitari_python_interface)
 ENDIF()
 
 SET(INCDIR "${CMAKE_INSTALL_PREFIX}/include/xitari")
