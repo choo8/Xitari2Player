@@ -12,6 +12,11 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
+/*
+This file is taken from https://github.com/NeuroCSUT/Alewrap2Player, 
+a lua wrapper for the Xitari environment
+*/
+
 #include "xitari_c_wrapper.h"
 //#include "lua.h"
 //#include "lualib.h"
