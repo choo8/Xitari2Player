@@ -1,8 +1,8 @@
-# ale_python_interface.py
-# Author: Ben Goodrich
-# This directly implements a python version of the arcade learning
+# xitari_python_interface.py
+# Author: Joshua Choo
+# This directly implements a python version of Xitari2Player
 # environment interface.
-__all__ = ['ALEInterface']
+__all__ = ['ALEInterface', 'ale_fillRgbFromPalette']
 
 from ctypes import *
 import numpy as np
